@@ -1,0 +1,49 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.66.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 d8d3aa8ce5ac5f9c596bc0ba6fee541109eb389c Build.PL
+SHA1 fc2c2b9a6324d2ab5b3f295ffdbcdf8503e8fb8a Changes
+SHA1 2b3ccb88f716f614f8af721a1c69dba0bcdbbb32 LICENSE
+SHA1 82afb17668af90c069868b175027b92aa995c189 MANIFEST
+SHA1 b581314d3dc86170a101b303516c1091aeb20d03 META.json
+SHA1 7daffd66921649a72ebc48dbae11ca97d9347ee2 META.yml
+SHA1 fc377279c4c302776c960246425805c39787e71a README
+SHA1 e1742ebdcec32012d6b618bfcabfd1d314a6a8ee bin/yakuake_session
+SHA1 ffb104cf1c710252e41ea7d36493219fec195661 bin/yakuake_session_tt_cd
+SHA1 1117239c120158b15163678a5ca333d1c1309168 inc/Bob.pm
+SHA1 b2daf2d6d3f2158b33d84a79ea725c922f508718 inc/CPANTesting.pm
+SHA1 32d0d60cba78d86b9c2cc6ce3b511c0fbe6e0b91 inc/SubClass.pm
+SHA1 31748884705c624deca59b91f46816e43ec03eaf lib/Yakuake/Sessions.pm
+SHA1 5b418179c13d5f6c7995c9021ec067a20cab70dc t/01always_pass.t
+SHA1 3efad192ea3d301d89077ffae877eeb337e70454 t/02pod.t
+SHA1 9431c4e2e3306b98d9717ca8c1bef0dcfd1e6710 t/03podcoverage.t
+SHA1 86fea17e26523e15cc93cdb332c6d5d36738a9d2 t/04critic.t
+SHA1 ac6ecf11f1794dcdce45b752040f2704f11a106a t/05kwalitee.t
+SHA1 2d35cdac574caac7a169d557d9a97037e875f057 t/06yaml.t
+SHA1 b5e0ccc80f03236f1323ce7d8d8a13f4b4662d93 t/07podspelling.t
+SHA1 0974b721c4ddee40dcd48bc1611c50cb19039c95 t/10test_script.t
+SHA1 00aa2e48a788f7ec7de8365693f0ba278f86c98c t/critic.rc
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.10 (GNU/Linux)
+
+iQEcBAEBAgAGBQJRdYfnAAoJEK492j4Im1BpiAEH/j2JBFyLHFETYel5VT6KTGYe
+8lu2dFIoiEboZctEHB6cPxEXWQDPwW+eV18Mns4RrRPQ2vR6mVjWB38toe481Qc+
+rQ8d3FciWXCAEzZs8IrZp82nLuTpjFcREF0YBXi51rO4cedzN892p9ydgDXih+du
+8g11NF0E7dGyjcevWqU2rZID6spbfJeLlHdubZvD2dsyOfU+e+T8xFKlolPT0NXv
+kS0wFW7tkyUj/vEsYr/f4iKa5gJ2x5RbB4pgdfcwt4R87fgmRzF8TIYvmuXL5kUr
+1DewhjFCr5GnJ/IWDoTLEtW9XJ7ASJTbkt78jXyVse1kE7CUvOk0BzFH+B2zhHk=
+=IFsX
+-----END PGP SIGNATURE-----

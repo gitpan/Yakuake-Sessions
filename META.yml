@@ -1,0 +1,41 @@
+---
+abstract: 'Session Manager for the Yakuake Terminal Emulator'
+author:
+  - 'Peter Flanigan, C<< <pjfl@cpan.org> >>'
+build_requires:
+  Exception::Class: 1.23
+  Test::More: 0.74
+configure_requires:
+  Module::Build: 0.38
+  version: 0.77
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Yakuake-Sessions
+no_index:
+  directory:
+    - examples
+    - inc
+    - share
+    - t
+provides:
+  Yakuake::Sessions:
+    file: lib/Yakuake/Sessions.pm
+    version: v0.2.8
+recommends:
+  App::cpanminus: 1.6005
+  Pod::Markdown: 1.322
+requires:
+  Class::Usul: v0.14.0
+  File::DataClass: v0.16.0
+  perl: 5.01
+  version: 0.77
+resources:
+  bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Yakuake-Sessions
+  homepage: http://www.roxsoft.co.uk
+  license: http://dev.perl.org/licenses/
+  repository: git://github.com/pjfl/Yakuake-Sessions.git
+version: v0.2.8

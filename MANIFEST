@@ -1,0 +1,23 @@
+bin/yakuake_session
+bin/yakuake_session_tt_cd
+Build.PL
+Changes
+inc/Bob.pm
+inc/CPANTesting.pm
+inc/SubClass.pm
+lib/Yakuake/Sessions.pm
+LICENSE
+MANIFEST			This list of files
+META.json
+META.yml
+README
+t/01always_pass.t
+t/02pod.t
+t/03podcoverage.t
+t/04critic.t
+t/05kwalitee.t
+t/06yaml.t
+t/07podspelling.t
+t/10test_script.t
+t/critic.rc
+SIGNATURE    Added here by Module::Build
