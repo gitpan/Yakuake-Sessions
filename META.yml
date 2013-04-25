@@ -24,7 +24,7 @@ no_index:
 provides:
   Yakuake::Sessions:
     file: lib/Yakuake/Sessions.pm
-    version: v0.2.8
+    version: v0.3.1
 recommends:
   App::cpanminus: 1.6005
   Pod::Markdown: 1.322
@@ -38,4 +38,4 @@ resources:
   homepage: http://www.roxsoft.co.uk
   license: http://dev.perl.org/licenses/
   repository: git://github.com/pjfl/Yakuake-Sessions.git
-version: v0.2.8
+version: v0.3.1
