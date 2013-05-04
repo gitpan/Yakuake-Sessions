@@ -3,7 +3,6 @@ abstract: 'Session Manager for the Yakuake Terminal Emulator'
 author:
   - 'Peter Flanigan, C<< <pjfl@cpan.org> >>'
 build_requires:
-  Exception::Class: 1.23
   Test::More: 0.74
 configure_requires:
   Module::Build: 0.38
@@ -17,6 +16,7 @@ meta-spec:
 name: Yakuake-Sessions
 no_index:
   directory:
+    - bin
     - examples
     - inc
     - share
@@ -24,13 +24,13 @@ no_index:
 provides:
   Yakuake::Sessions:
     file: lib/Yakuake/Sessions.pm
-    version: v0.3.1
+    version: v0.4.2
 recommends:
   App::cpanminus: 1.6005
   Pod::Markdown: 1.322
 requires:
-  Class::Usul: v0.14.0
-  File::DataClass: v0.16.0
+  Class::Usul: v0.17.0
+  File::DataClass: v0.19.0
   perl: 5.01
   version: 0.77
 resources:
@@ -38,4 +38,4 @@ resources:
   homepage: http://www.roxsoft.co.uk
   license: http://dev.perl.org/licenses/
   repository: git://github.com/pjfl/Yakuake-Sessions.git
-version: v0.3.1
+version: v0.4.2
