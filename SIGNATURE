@@ -14,36 +14,41 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 68ad6d3fd44e389ad7b053781fa485e98b82ced7 Build.PL
-SHA1 c016663297a60848e7957c17ab4e6924c59b4faf Changes
+SHA1 d2b729af51beec8d5fde5babd42430cd46d015fa Build.PL
+SHA1 55e2a1b8242256fc46ba0d06330ff013b8c60e5f Changes
 SHA1 2b3ccb88f716f614f8af721a1c69dba0bcdbbb32 LICENSE
-SHA1 82afb17668af90c069868b175027b92aa995c189 MANIFEST
-SHA1 6a4e95e0805ffa0149be6acb847c795aef551d7c META.json
-SHA1 dc2191bc1fcae31802d20c9c07db5178a9db38de META.yml
-SHA1 cb607bff8deb5e7282fc2c0a45389bf32ca429f3 README
-SHA1 a5be030bacf8f1c10cf53d26b617343d9d660a9f bin/yakuake_session
-SHA1 ee7c3ad319476fe928a04ed4eb66f55df8f0f8e4 bin/yakuake_session_tt_cd
+SHA1 4088d1cc1be3fcde371600a5a728459d6b8b61d1 MANIFEST
+SHA1 f1fb88fbb8bd9527c1e995d654400e41065c4e2b META.json
+SHA1 13f484b9712f2fb9abe25fad54d58a3b4fb3a2b6 META.yml
+SHA1 b8021eab2aadbd8ef9fb089a8b186c9752b13e92 README
+SHA1 ce42c44feba97f50492a10b24f5cfb502db8c4f7 bin/yakuake_session
+SHA1 7d0de4c87f57f6ab43c7f7d41936ec5e6eda8a5d bin/yakuake_session_tt_cd
 SHA1 ab66230f9e2bf4c31dbe3c77298201a3a9d4d082 inc/Bob.pm
 SHA1 c2824ace2d23f08e87f9ee54e8520f7b207fc1b4 inc/CPANTesting.pm
 SHA1 3e461b4687dcea7680dc96761ecd703556759063 inc/SubClass.pm
-SHA1 71e669ed1ebf91dc06c3a758b12815f1b04d8a6f lib/Yakuake/Sessions.pm
+SHA1 6eedcb898c79a07b6c05b1b244ef9952cb020c5c lib/Yakuake/Sessions.pm
+SHA1 a2f5c10b7ac938197d2b80b09afca94a6e3a36e8 lib/Yakuake/Sessions/Base.pm
+SHA1 09c8ca5d3a029c37d66659f322487432739428eb lib/Yakuake/Sessions/Config.pm
+SHA1 2e3de4fb00fe8d9d478e51893f4ae60e9c0f4b39 lib/Yakuake/Sessions/TraitFor/FileData.pm
+SHA1 4af71b68ad26289ffa9c80a4b2419f061bab81dd lib/Yakuake/Sessions/TraitFor/Management.pm
+SHA1 19cd12daccc0851f7f1ac22a1bb205a8350e4623 lib/Yakuake/Sessions/TraitFor/TabTitles.pm
 SHA1 8e65f1bcbe699485be07ea22c8465ad6e6dc371b t/01always_pass.t
-SHA1 24ede1d206a341db0e42277a433d90a2a28e051e t/02pod.t
-SHA1 22cec1c9cfbb2dc4d8e714e83fbb8bcad3b562ef t/03podcoverage.t
-SHA1 7e3a60b997f911eb10c72b87ed8739fa5cfc395d t/04critic.t
-SHA1 af85c25c70c13c88f06a7ed21ef3082eca152634 t/05kwalitee.t
-SHA1 a7b421c90e74abc5afd3967befbbcfa9875bc6b5 t/06yaml.t
-SHA1 f90dc55d01c709bcae98f9aefd5c469e4d7165cf t/07podspelling.t
-SHA1 bc57ebc298d2e5e5f84272c969e4e842364092e1 t/10test_script.t
+SHA1 37c12679f025928c87f2763116abc424c27d89e9 t/02pod.t
+SHA1 903707251bf887e039bfd670df59e1423225f2c8 t/03podcoverage.t
+SHA1 4054bfff60a24d9ce870e3afe528d0dd1eb246b3 t/04critic.t
+SHA1 f61960f24818dd94f28d891d26474c2794fc0010 t/05kwalitee.t
+SHA1 090db522c434895960baf3ed4f7dbc62d8fd9c41 t/06yaml.t
+SHA1 194322a3241695c3469356f86f9d760ee7aeb231 t/07podspelling.t
+SHA1 7693157cc90c1e8ae50eb55bb9a56582b9aaa93a t/10test_script.t
 SHA1 00aa2e48a788f7ec7de8365693f0ba278f86c98c t/critic.rc
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iQEcBAEBAgAGBQJRhFOpAAoJEK492j4Im1BpIhgH/1KXQWzD9BQ+CGLHYTBxsG0R
-vzARCPLerTQxZtCnGtZ4ADmIVeINeWDMurDDtPUGU0kzGlGjt8ec08UXoeEG+Fn7
-z2dNBT9qSBobLwk2uJIzUH5TuyKYc3zqWWWzKco+V71q17VoEsFUzbpvWd0DfjXr
-xYV2hRZEymK94ZdqXo7mDFr1de/rF1EUlGyDs6fqUaNbX4dOP6dZTvgtlg5aH45J
-IwmZKlmOJYEAYWCon8zoyen7+Q/PT+POdhcQZkxyloj8X4UiTeJlwlLnccncCir4
-q+AOwHJUOpEglj8eZIjdmeEiTZU5BrdVGA5ZK6/In6LzcioL/Rb8P0fQ6YDOtRE=
-=/WU0
+iQEcBAEBAgAGBQJRiaRYAAoJEK492j4Im1BpAaYH/RjFCzGNAyAMpcVAJr4WVaz4
+jahsSONqalXQjta+Pz4NZzeKZKr6NCxQg9CXLAUTykfb1wEno9LFA8+a3VHt0t99
+pkK3vJgWV/bYpny4s+u8ktF12Pvr8OLa4sk272f8oJFV7/V3GmX2DwiCJ1ELLXGo
+2UUhqOfTliJzl6GeJtbbq1xqAgQpLe9S/oO25HF+BRoIX3g3YHPOIx/wa68sit/F
+GPGfsK//4G8e1OhVjBwCgJF90Le4S7CBWgP4IcQ8eb/OycA6FlpIxG0Pa/PNQYzd
+yTlQfSvRHmmfz4W53vFHiMwPp5RnXz9Z+t7Rdew9BdrApvtjGSqcQcOs69JKGBU=
+=Cd7O
 -----END PGP SIGNATURE-----

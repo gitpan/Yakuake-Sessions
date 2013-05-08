@@ -24,13 +24,28 @@ no_index:
 provides:
   Yakuake::Sessions:
     file: lib/Yakuake/Sessions.pm
-    version: v0.4.2
+    version: v0.5.1
+  Yakuake::Sessions::Base:
+    file: lib/Yakuake/Sessions/Base.pm
+    version: v0.5.1
+  Yakuake::Sessions::Config:
+    file: lib/Yakuake/Sessions/Config.pm
+    version: v0.5.1
+  Yakuake::Sessions::TraitFor::FileData:
+    file: lib/Yakuake/Sessions/TraitFor/FileData.pm
+    version: v0.5.1
+  Yakuake::Sessions::TraitFor::Management:
+    file: lib/Yakuake/Sessions/TraitFor/Management.pm
+    version: v0.5.1
+  Yakuake::Sessions::TraitFor::TabTitles:
+    file: lib/Yakuake/Sessions/TraitFor/TabTitles.pm
+    version: v0.5.1
 recommends:
   App::cpanminus: 1.6005
   Pod::Markdown: 1.322
 requires:
-  Class::Usul: v0.17.0
-  File::DataClass: v0.19.0
+  Class::Usul: v0.18.0
+  File::DataClass: v0.20.0
   perl: 5.01
   version: 0.77
 resources:
@@ -38,4 +53,4 @@ resources:
   homepage: http://www.roxsoft.co.uk
   license: http://dev.perl.org/licenses/
   repository: git://github.com/pjfl/Yakuake-Sessions.git
-version: v0.4.2
+version: v0.5.1

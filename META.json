@@ -40,8 +40,8 @@
             "Pod::Markdown" : "1.322"
          },
          "requires" : {
-            "Class::Usul" : "v0.17.0",
-            "File::DataClass" : "v0.19.0",
+            "Class::Usul" : "v0.18.0",
+            "File::DataClass" : "v0.20.0",
             "perl" : "5.01",
             "version" : "0.77"
          }
@@ -50,7 +50,27 @@
    "provides" : {
       "Yakuake::Sessions" : {
          "file" : "lib/Yakuake/Sessions.pm",
-         "version" : "v0.4.2"
+         "version" : "v0.5.1"
+      },
+      "Yakuake::Sessions::Base" : {
+         "file" : "lib/Yakuake/Sessions/Base.pm",
+         "version" : "v0.5.1"
+      },
+      "Yakuake::Sessions::Config" : {
+         "file" : "lib/Yakuake/Sessions/Config.pm",
+         "version" : "v0.5.1"
+      },
+      "Yakuake::Sessions::TraitFor::FileData" : {
+         "file" : "lib/Yakuake/Sessions/TraitFor/FileData.pm",
+         "version" : "v0.5.1"
+      },
+      "Yakuake::Sessions::TraitFor::Management" : {
+         "file" : "lib/Yakuake/Sessions/TraitFor/Management.pm",
+         "version" : "v0.5.1"
+      },
+      "Yakuake::Sessions::TraitFor::TabTitles" : {
+         "file" : "lib/Yakuake/Sessions/TraitFor/TabTitles.pm",
+         "version" : "v0.5.1"
       }
    },
    "release_status" : "stable",
@@ -66,5 +86,5 @@
          "url" : "git://github.com/pjfl/Yakuake-Sessions.git"
       }
    },
-   "version" : "v0.4.2"
+   "version" : "v0.5.1"
 }
