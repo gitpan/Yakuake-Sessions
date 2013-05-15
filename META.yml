@@ -3,10 +3,11 @@ abstract: 'Session Manager for the Yakuake Terminal Emulator'
 author:
   - 'Peter Flanigan, C<< <pjfl@cpan.org> >>'
 build_requires:
-  Test::More: 0.74
+  Module::Build: 0.4004
+  version: 0.88
 configure_requires:
-  Module::Build: 0.38
-  version: 0.77
+  Module::Build: 0.4004
+  version: 0.88
 dynamic_config: 1
 generated_by: 'Module::Build version 0.4004, CPAN::Meta::Converter version 2.120921'
 license: perl
@@ -24,7 +25,7 @@ no_index:
 provides:
   Yakuake::Sessions:
     file: lib/Yakuake/Sessions.pm
-    version: v0.5.1
+    version: v0.5.3
   Yakuake::Sessions::Base:
     file: lib/Yakuake/Sessions/Base.pm
     version: v0.5.1
@@ -36,21 +37,23 @@ provides:
     version: v0.5.1
   Yakuake::Sessions::TraitFor::Management:
     file: lib/Yakuake/Sessions/TraitFor/Management.pm
-    version: v0.5.1
+    version: v0.5.3
   Yakuake::Sessions::TraitFor::TabTitles:
     file: lib/Yakuake/Sessions/TraitFor/TabTitles.pm
     version: v0.5.1
 recommends:
   App::cpanminus: 1.6005
-  Pod::Markdown: 1.322
 requires:
-  Class::Usul: v0.18.0
+  Class::Usul: v0.19.0
   File::DataClass: v0.20.0
+  Moose: 2.0802
+  MooseX::Types: 0.35
+  MooseX::Types::Common: 0.001008
+  namespace::autoclean: 0.13
   perl: 5.01
-  version: 0.77
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Yakuake-Sessions
   homepage: http://www.roxsoft.co.uk
   license: http://dev.perl.org/licenses/
   repository: git://github.com/pjfl/Yakuake-Sessions.git
-version: v0.5.1
+version: v0.5.3

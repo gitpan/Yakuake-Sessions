@@ -25,32 +25,35 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Test::More" : "0.74"
+            "Module::Build" : "0.4004",
+            "version" : "0.88"
          }
       },
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38",
-            "version" : "0.77"
+            "Module::Build" : "0.4004",
+            "version" : "0.88"
          }
       },
       "runtime" : {
          "recommends" : {
-            "App::cpanminus" : "1.6005",
-            "Pod::Markdown" : "1.322"
+            "App::cpanminus" : "1.6005"
          },
          "requires" : {
-            "Class::Usul" : "v0.18.0",
+            "Class::Usul" : "v0.19.0",
             "File::DataClass" : "v0.20.0",
-            "perl" : "5.01",
-            "version" : "0.77"
+            "Moose" : "2.0802",
+            "MooseX::Types" : "0.35",
+            "MooseX::Types::Common" : "0.001008",
+            "namespace::autoclean" : "0.13",
+            "perl" : "5.01"
          }
       }
    },
    "provides" : {
       "Yakuake::Sessions" : {
          "file" : "lib/Yakuake/Sessions.pm",
-         "version" : "v0.5.1"
+         "version" : "v0.5.3"
       },
       "Yakuake::Sessions::Base" : {
          "file" : "lib/Yakuake/Sessions/Base.pm",
@@ -66,7 +69,7 @@
       },
       "Yakuake::Sessions::TraitFor::Management" : {
          "file" : "lib/Yakuake/Sessions/TraitFor/Management.pm",
-         "version" : "v0.5.1"
+         "version" : "v0.5.3"
       },
       "Yakuake::Sessions::TraitFor::TabTitles" : {
          "file" : "lib/Yakuake/Sessions/TraitFor/TabTitles.pm",
@@ -86,5 +89,5 @@
          "url" : "git://github.com/pjfl/Yakuake-Sessions.git"
       }
    },
-   "version" : "v0.5.1"
+   "version" : "v0.5.3"
 }

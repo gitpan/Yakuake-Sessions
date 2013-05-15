@@ -14,23 +14,23 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 d2b729af51beec8d5fde5babd42430cd46d015fa Build.PL
-SHA1 55e2a1b8242256fc46ba0d06330ff013b8c60e5f Changes
+SHA1 fa3ae61154e970c20830ecad224e1eaa42777b6e Build.PL
+SHA1 6fd5e393b0d2c04474f9a677833bd2610bb572ac Changes
 SHA1 2b3ccb88f716f614f8af721a1c69dba0bcdbbb32 LICENSE
 SHA1 4088d1cc1be3fcde371600a5a728459d6b8b61d1 MANIFEST
-SHA1 f1fb88fbb8bd9527c1e995d654400e41065c4e2b META.json
-SHA1 13f484b9712f2fb9abe25fad54d58a3b4fb3a2b6 META.yml
-SHA1 b8021eab2aadbd8ef9fb089a8b186c9752b13e92 README
+SHA1 a560c8514464ca221cb6e305b5adcae138af673d META.json
+SHA1 f92599fdaa9df87814480e9429b9b91a627fc346 META.yml
+SHA1 eb3c96280475e0da384ef3f30b2d1fe0af055e95 README
 SHA1 ce42c44feba97f50492a10b24f5cfb502db8c4f7 bin/yakuake_session
 SHA1 7d0de4c87f57f6ab43c7f7d41936ec5e6eda8a5d bin/yakuake_session_tt_cd
-SHA1 ab66230f9e2bf4c31dbe3c77298201a3a9d4d082 inc/Bob.pm
+SHA1 2dad6b015a19acb067ac9b3d677292796ecdb1c9 inc/Bob.pm
 SHA1 c2824ace2d23f08e87f9ee54e8520f7b207fc1b4 inc/CPANTesting.pm
 SHA1 3e461b4687dcea7680dc96761ecd703556759063 inc/SubClass.pm
-SHA1 6eedcb898c79a07b6c05b1b244ef9952cb020c5c lib/Yakuake/Sessions.pm
+SHA1 c945262f5043491d0861d9d04e4037f1720c901b lib/Yakuake/Sessions.pm
 SHA1 a2f5c10b7ac938197d2b80b09afca94a6e3a36e8 lib/Yakuake/Sessions/Base.pm
 SHA1 09c8ca5d3a029c37d66659f322487432739428eb lib/Yakuake/Sessions/Config.pm
 SHA1 2e3de4fb00fe8d9d478e51893f4ae60e9c0f4b39 lib/Yakuake/Sessions/TraitFor/FileData.pm
-SHA1 4af71b68ad26289ffa9c80a4b2419f061bab81dd lib/Yakuake/Sessions/TraitFor/Management.pm
+SHA1 8de8fa6064670461b639a1b70471f2530fc1f137 lib/Yakuake/Sessions/TraitFor/Management.pm
 SHA1 19cd12daccc0851f7f1ac22a1bb205a8350e4623 lib/Yakuake/Sessions/TraitFor/TabTitles.pm
 SHA1 8e65f1bcbe699485be07ea22c8465ad6e6dc371b t/01always_pass.t
 SHA1 37c12679f025928c87f2763116abc424c27d89e9 t/02pod.t
@@ -44,11 +44,11 @@ SHA1 00aa2e48a788f7ec7de8365693f0ba278f86c98c t/critic.rc
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iQEcBAEBAgAGBQJRiaRYAAoJEK492j4Im1BpAaYH/RjFCzGNAyAMpcVAJr4WVaz4
-jahsSONqalXQjta+Pz4NZzeKZKr6NCxQg9CXLAUTykfb1wEno9LFA8+a3VHt0t99
-pkK3vJgWV/bYpny4s+u8ktF12Pvr8OLa4sk272f8oJFV7/V3GmX2DwiCJ1ELLXGo
-2UUhqOfTliJzl6GeJtbbq1xqAgQpLe9S/oO25HF+BRoIX3g3YHPOIx/wa68sit/F
-GPGfsK//4G8e1OhVjBwCgJF90Le4S7CBWgP4IcQ8eb/OycA6FlpIxG0Pa/PNQYzd
-yTlQfSvRHmmfz4W53vFHiMwPp5RnXz9Z+t7Rdew9BdrApvtjGSqcQcOs69JKGBU=
-=Cd7O
+iQEcBAEBAgAGBQJRk8zAAAoJEK492j4Im1BpAjkH/RBwzUZexJCdWP+kBMFfemum
+uxtPZpSpXcdHmaW8+LFZMjdDBcgkYD8TfgevIA0ll2DLOvjKVaKHL/F37b0ATiLq
+hkHdU/6MzjiB5YfRnddc4AGDRmRZ3Bb0lHs/tyjeHsfeDtyKePmUrTxQT7UJptf9
+ODjamIpCYiipDKEOHzsm7t8u4dN/mBNTxqJndJF0kdDSnZQOR4yqmYWiBpjdcfkg
+FzMYwvOla95PlqhlzmfUu9656wSL9ubitBWNgHfV6BCWHaE2qeYzHAIvxQuRi85w
+jspDGuCqlWtSOaaIvohT6b1cDwsPuwolEo/6cueCcwYCQKK5gnK/xzK1F5R4czE=
+=tVBj
 -----END PGP SIGNATURE-----
