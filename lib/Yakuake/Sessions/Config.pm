@@ -1,24 +1,26 @@
-# @(#)Ident: Config.pm 2013-05-06 19:42 pjf ;
+# @(#)Ident: Config.pm 2013-07-08 19:42 pjf ;
 
 package Yakuake::Sessions::Config;
 
-use version; our $VERSION = qv( sprintf '0.5.%d', q$Rev: 1 $ =~ /\d+/gmx );
+use namespace::sweep;
+use version; our $VERSION = qv( sprintf '0.7.%d', q$Rev: 1 $ =~ /\d+/gmx );
 
-use Class::Usul::Moose;
-use Class::Usul::Functions qw(untaint_identifier);
+use Class::Usul::Functions  qw( untaint_identifier );
+use File::DataClass::Types  qw( NonEmptySimpleStr Num );
+use Moo;
 
 extends q(Class::Usul::Config::Programs);
 
 has 'editor'        => is => 'lazy', isa => NonEmptySimpleStr,
    default          => sub { untaint_identifier $ENV{EDITOR} || 'emacs' };
 
+has 'nap_time'      => is => 'lazy', isa => Num, default => 0.3;
+
 has 'storage_class' => is => 'lazy', isa => NonEmptySimpleStr,
    default          => 'JSON';
 
 has 'tab_title'     => is => 'lazy', isa => NonEmptySimpleStr,
    default          => 'Shell';
-
-__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -34,7 +36,7 @@ Yakuake::Sessions::Config - Attribute initialization from configuration file
 
 =head1 Synopsis
 
-   use Class::Usul::Moose;
+   use Moo;
 
    extends q(Class::Usul::Programs);
 
@@ -42,7 +44,7 @@ Yakuake::Sessions::Config - Attribute initialization from configuration file
 
 =head1 Version
 
-This documents version v0.5.$Rev: 1 $ of L<Yakuake::Sessions::Config>
+This documents version v0.7.$Rev: 1 $ of L<Yakuake::Sessions::Config>
 
 =head1 Description
 
@@ -55,10 +57,18 @@ Defines the following attributes;
 
 =over 3
 
+=item C<dbus>
+
+Qt communication interface and service name
+
 =item C<editor>
 
 Defaults to the environment variable C<EDITOR> or if unset
 C<emacs>
+
+=item C<nap_time>
+
+Time in seconds to sleep whilst C<DBus> settles down
 
 =item C<storage_class>
 

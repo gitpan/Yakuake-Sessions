@@ -1,24 +1,25 @@
-# @(#)Ident: Sessions.pm 2013-05-15 20:33 pjf ;
+# @(#)Ident: Sessions.pm 2013-07-28 18:49 pjf ;
 
 package Yakuake::Sessions;
 
 use 5.01;
-use version; our $VERSION = qv( sprintf '0.5.%d', q$Rev: 4 $ =~ /\d+/gmx );
+use namespace::sweep;
+use version; our $VERSION = qv( sprintf '0.7.%d', q$Rev: 3 $ =~ /\d+/gmx );
 
-use Class::Usul::Moose;
 use Class::Usul::Constants;
+use Moo;
 
 extends q(Yakuake::Sessions::Base);
+with    q(Yakuake::Sessions::TraitFor::DBus);
+with    q(Yakuake::Sessions::TraitFor::TabTitles);
 with    q(Yakuake::Sessions::TraitFor::FileData);
 with    q(Yakuake::Sessions::TraitFor::Management);
-with    q(Yakuake::Sessions::TraitFor::TabTitles);
+with    q(Class::Usul::TraitFor::UntaintedGetopts);
 
 # Construction
 around 'run' => sub {
    my ($next, $self) = @_; $self->quiet( TRUE ); return $self->$next();
 };
-
-__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -34,7 +35,7 @@ Yakuake::Sessions - Session Manager for the Yakuake Terminal Emulator
 
 =head1 Version
 
-This documents version v0.5.$Rev: 4 $ of L<Yakuake::Sessions>
+This documents version v0.7.$Rev: 3 $ of L<Yakuake::Sessions>
 
 =head1 Synopsis
 
@@ -77,13 +78,13 @@ might look like;
       "tab_title": "Oo.!.oO"
    }
 
-Defines the following list of attributes;
+See the L<config class|Yakuake::Sessions::Config> for the full list of
+configuration attributes
+
+Defines the following list of attributes which can be set from the command
+line;
 
 =over 3
-
-=item C<dbus>
-
-Qt communication interface and service name
 
 =item C<config_dir>
 
@@ -109,10 +110,13 @@ Directory to store the session profiles in
 File format used to store session data. Defaults to the config class
 value; C<JSON>
 
-=item C<tab_title>
+=back
 
-Default title to apply to tabs. Defaults to the config class value;
-C<Shell>
+Modifies these methods in the base class
+
+=over 3
+
+=item C<run>
 
 =back
 
@@ -183,6 +187,9 @@ Display the contents of the specified session profile
 Turning on debug, add C<-D> to the command line, causes the session dump
 and load subroutines to display the session tabs data
 
+The C<list_methods> command lists all of the callable the methods and
+their abstracts
+
 =head1 Dependencies
 
 =over 3
@@ -191,7 +198,7 @@ and load subroutines to display the session tabs data
 
 =item L<File::DataClass>
 
-=item L<Yakuake::Sessions::Config>
+=item L<Net::DBus>
 
 =back
 

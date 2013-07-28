@@ -2,7 +2,7 @@ Name
     Yakuake::Sessions - Session Manager for the Yakuake Terminal Emulator
 
 Version
-    This documents version v0.5.$Rev: 4 $ of Yakuake::Sessions
+    This documents version v0.7.$Rev: 3 $ of Yakuake::Sessions
 
 Synopsis
        # To reduce typing define some shell aliases
@@ -42,10 +42,10 @@ Configuration and Environment
           "tab_title": "Oo.!.oO"
        }
 
-    Defines the following list of attributes;
+    See the config class for the full list of configuration attributes
 
-    "dbus"
-       Qt communication interface and service name
+    Defines the following list of attributes which can be set from the
+    command line;
 
     "config_dir"
        Directory containing the configuration files. Defaults to
@@ -66,9 +66,9 @@ Configuration and Environment
        File format used to store session data. Defaults to the config class
        value; "JSON"
 
-    "tab_title"
-       Default title to apply to tabs. Defaults to the config class value;
-       "Shell"
+    Modifies these methods in the base class
+
+    "run"
 
 Subroutines/Methods
   create
@@ -126,10 +126,13 @@ Diagnostics
     Turning on debug, add "-D" to the command line, causes the session dump
     and load subroutines to display the session tabs data
 
+    The "list_methods" command lists all of the callable the methods and
+    their abstracts
+
 Dependencies
     Class::Usul
     File::DataClass
-    Yakuake::Sessions::Config
+    Net::DBus
 
 Incompatibilities
     None

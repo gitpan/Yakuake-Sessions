@@ -1,51 +1,39 @@
-# @(#)Ident: TabTitles.pm 2013-05-08 00:57 pjf ;
+# @(#)Ident: TabTitles.pm 2013-07-06 20:31 pjf ;
 
 package Yakuake::Sessions::TraitFor::TabTitles;
 
-use namespace::autoclean;
-use version; our $VERSION = qv( sprintf '0.5.%d', q$Rev: 1 $ =~ /\d+/gmx );
+use namespace::sweep;
+use version; our $VERSION = qv( sprintf '0.7.%d', q$Rev: 1 $ =~ /\d+/gmx );
 
-use Moose::Role;
 use Class::Usul::Constants;
-use Class::Usul::Functions        qw(throw);
-use Cwd                           qw(getcwd);
-use MooseX::Types::Common::String qw(NonEmptySimpleStr);
+use Class::Usul::Functions  qw( throw );
+use Cwd                     qw( getcwd );
+use File::DataClass::Types  qw( NonEmptySimpleStr );
+use Moo::Role;
+use MooX::Options;
 
-requires qw(config_dir yakuake_sessions yakuake_tabs);
-
-has 'tab_title'  => is => 'ro',   isa => NonEmptySimpleStr,
-   documentation => 'Default title to apply to tabs',
-   default       => sub { $_[ 0 ]->config->tab_title };
+requires qw( config config_dir loc next_argv set_tab_title_for_session );
 
 # Public methods
 sub set_tab_title : method {
-   $_[ 0 ]->_set_tab_title( $_[ 0 ]->extra_argv->[ 0 ] ); return OK;
+   my ($self, $title, $tty_num) = @_;
+
+   $title   //= $self->next_argv || $self->config->tab_title;
+   $tty_num //= $ENV{TTY};
+
+   $self->set_tab_title_for_session( "${tty_num} ${title}" );
+   return OK;
 }
 
 sub set_tab_title_for_project : method {
-   my $self = shift; $self->_set_project_for_tty;
+   my $self    = shift;
+   my $title   = $self->next_argv or throw $self->loc( 'No tab title' );
+   my $appbase = $self->next_argv || getcwd;
+   my $tty_num = $ENV{TTY};
 
-   my $title = $self->extra_argv->[ 0 ] or throw 'No tab title';
-
-   $self->_set_tab_title( $title ); return OK;
-}
-
-# Private methods
-sub _set_project_for_tty {
-   my $self = shift;
-
-   $self->io( [ $self->config_dir, q(project_).$ENV{TTY} ] )->print( getcwd );
-   return;
-}
-
-sub _set_tab_title {
-   my ($self, $title) = @_; $title ||= $self->tab_title;
-
-   my $sess_id = $self->yakuake_sessions( q(activeSessionId) );
-   my $term_id = $self->yakuake_sessions( q(activeTerminalId) );
-
-   $self->yakuake_tabs( q(setTabTitle), $sess_id, "${term_id} ${title}" );
-   return;
+   $self->set_tab_title( $title, $tty_num );
+   $self->config_dir->catfile( "project_${tty_num}" )->println( $appbase );
+   return OK;
 }
 
 1;
@@ -62,45 +50,36 @@ Yakuake::Sessions::TraitFor::TabTitles - Displays the tab title text
 
 =head1 Synopsis
 
-   use Moose;
+   use Moo;
 
    extends 'Yakuake::Sessions::Base';
    with    'Yakuake::Sessions::TraitFor::TabTitles';
 
 =head1 Version
 
-This documents version v0.5.$Rev: 1 $ of L<Yakuake::Sessions::TraitFor::TabTitles>
+This documents version v0.7.$Rev: 1 $ of
+L<Yakuake::Sessions::TraitFor::TabTitles>
 
 =head1 Description
 
-Methods to set the tab title text
+Methods to set the tab title text from the command line
 
 =head1 Configuration and Environment
 
-Requires these attribute; C<config_dir>, C<yakuake_sessions>, and
-C<yakuake_tabs>
-
-Defines the following attributes;
-
-=over 3
-
-=item C<tab_title>
-
-Default title to apply to tabs. Defaults to the config class value;
-C<Shell>
-
-=back
+Defines no attributes
 
 =head1 Subroutines/Methods
 
-=head2 set_tab_title
+=head2 set_tab_title - Sets the current tabs title text
 
-   $exit_code = $self->set_tab_title;
+   $exit_code = $self->set_tab_title( $title, $tty_num );
 
-Sets the current tabs title text to the specified value. Defaults to the
-vale supplied in the configuration
+The default value for the title is obtained from the command line, or
+if not defined then it defaults to the value supplied in the
+configuration. The C<$tty_num> default to the sessions C<TTY>
+environment variable
 
-=head2 set_tab_title_for_project
+=head2 set_tab_title_for_project - Sets the tab title text for the project
 
    $exit_code = $self->set_tab_title_for_project;
 
@@ -118,9 +97,9 @@ None
 
 =item L<Class::Usul>
 
-=item L<Moose::Role>
+=item L<File::DataClass>
 
-=item L<MooseX::Types::Common>
+=item L<Moo::Role>
 
 =back
 

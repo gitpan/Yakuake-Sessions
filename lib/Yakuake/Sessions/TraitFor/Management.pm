@@ -1,34 +1,37 @@
-# @(#)Ident: Management.pm 2013-05-15 17:38 pjf ;
+# @(#)Ident: Management.pm 2013-07-06 17:42 pjf ;
 
 package Yakuake::Sessions::TraitFor::Management;
 
-use namespace::autoclean;
-use version; our $VERSION = qv( sprintf '0.5.%d', q$Rev: 3 $ =~ /\d+/gmx );
+use namespace::sweep;
+use version; our $VERSION = qv( sprintf '0.7.%d', q$Rev: 1 $ =~ /\d+/gmx );
 
-use Moose::Role;
 use Class::Usul::Constants;
-use Class::Usul::Functions        qw(emit throw);
-use MooseX::Types::Common::String qw(NonEmptySimpleStr);
+use Class::Usul::Functions  qw( emit throw );
+use File::DataClass::Types  qw( NonEmptySimpleStr );
+use Moo::Role;
+use MooX::Options;
 
-requires qw(dump load profile_dir profile_path);
+requires qw( dump dumper extra_argv file load loc
+             profile_dir profile_path run_cmd );
 
 # Object attributes (public)
-has 'editor'     => is => 'ro', isa => NonEmptySimpleStr, lazy => TRUE,
+option 'editor'  => is => 'lazy', isa => NonEmptySimpleStr,
    documentation => 'Which text editor to use',
    default       => sub { $_[ 0 ]->config->editor };
 
 # Public methods
 sub create : method {
-   my $self = shift; my $path = $self->profile_path;
+   my $self = shift;
 
-   $path->assert_filepath; push @{ $self->extra_argv }, $path;
+   unshift @{ $self->extra_argv }, $self->profile_path->assert_filepath;
+
    return $self->dump;
 }
 
 sub delete : method {
    my $self = shift; my $path = $self->profile_path;
 
-   $path->exists or throw error => 'Path [_1] not found', args => [ $path ];
+   $path->exists or throw $self->loc( 'Path [_1] not found', $path );
    $path->unlink;
    return OK;
 }
@@ -66,23 +69,20 @@ Yakuake::Sessions::TraitFor::Management - CRUD methods for session profiles
 
 =head1 Synopsis
 
-   use Moose;
+   use Moo;
 
    extends 'Yakuake::Sessions::Base';
    with    'Yakuake::Sessions::TraitFor::Management';
 
 =head1 Version
 
-This documents version v0.5.$Rev: 3 $ of L<Yakuake::Sessions::TraitFor::Management>
+This documents version v0.7.$Rev: 1 $ of L<Yakuake::Sessions::TraitFor::Management>
 
 =head1 Description
 
 Create, retrieve, update, and delete methods for session profiles
 
 =head1 Configuration and Environment
-
-Requires these attributes; C<dump>, C<load>, C<profile_dir>, and
-C<profile_path>
 
 Defines the following attributes;
 
@@ -98,35 +98,35 @@ C<emacs>
 
 =head1 Subroutines/Methods
 
-=head2 create
+=head2 create - Create a new session profile
 
    $exit_code = $self->create;
 
-Creates a new session profile in the C<profile_dir>
+New session profiles are created in the C<profile_dir> directory
 
-=head2 delete
+=head2 delete - Delete a session profile
 
    $exit_code = $self->delete;
 
-Deletes the specified session profile
+The session profile is specified on the command line
 
-=head2 edit
+=head2 edit - Edit a session profile
 
    $exit_code = $self->edit;
 
-Edit a session profile
+Uses the C<editor> attribute to select the editor
 
-=head2 list
+=head2 list - List the names of the stored profiles
 
    $exit_code = $self->list;
 
 List the session profiles stored in the C<profile_dir>
 
-=head2 show
+=head2 show - Display the contents of a session profile
 
    $exit_code = $self->show;
 
-Display the contents of the specified session profile
+The session profile is specified on the command line
 
 =head1 Diagnostics
 
@@ -138,9 +138,9 @@ None
 
 =item L<Class::Usul>
 
-=item L<Moose::Role>
+=item L<File::DataClass>
 
-=item L<MooseX::Types::Common>
+=item L<Moo::Role>
 
 =back
 

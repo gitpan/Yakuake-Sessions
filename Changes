@@ -1,6 +1,20 @@
 Revision history for Yakuake::Sessions
 
-0.5.4     2013-05-15 21:33:22
+0.7.3     2013-07-28 19:49:55
+          - Bumped dependency on File::DataClass
+          - Close session kills forground process
+          - Now uses Net::DBus
+
+0.6.10    2013-07-06 19:26:36
+          - Split out ::TraitFor::DBus
+          - Rewrote _apply_sessions
+          - Added POD method abstracts
+          - Fixed bug in set tab title for project
+          - Now use TTYs to number tab titles
+          - Mooified
+
+0.5.5     2013-05-29 14:14:11
+          - Made not found error appear on load
           - Bumped Class::Usul version
           - Renamed C::U::Functions::say to emit
           - Updated prereqs in Build.PL

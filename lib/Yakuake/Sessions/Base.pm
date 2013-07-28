@@ -1,13 +1,16 @@
-# @(#)Ident: Base.pm 2013-05-06 18:13 pjf ;
+# @(#)Ident: Base.pm 2013-07-06 14:27 pjf ;
 
 package Yakuake::Sessions::Base;
 
-use version; our $VERSION = qv( sprintf '0.5.%d', q$Rev: 1 $ =~ /\d+/gmx );
+use namespace::sweep;
+use version; our $VERSION = qv( sprintf '0.7.%d', q$Rev: 1 $ =~ /\d+/gmx );
 
-use Class::Usul::Moose;
 use Class::Usul::Constants;
-use Class::Usul::Functions       qw(app_prefix throw trim);
-use File::DataClass::Constraints qw(Directory Path);
+use Class::Usul::Functions  qw( app_prefix throw trim );
+use File::DataClass::Types  qw( Directory HashRef NonEmptySimpleStr Path );
+use Moo;
+use MooX::Options;
+use Scalar::Util            qw( blessed );
 
 extends q(Class::Usul::Programs);
 
@@ -15,43 +18,23 @@ extends q(Class::Usul::Programs);
 has '+config_class' => default => sub { 'Yakuake::Sessions::Config' };
 
 # Public attributes
-has 'dbus'          => is => 'ro',   isa => ArrayRef[NonEmptySimpleStr],
-   documentation    => 'Qt communication interface and service name',
-   default          => sub { [ qw(qdbus org.kde.yakuake) ] };
+option 'config_dir'    => is => 'lazy', isa => Directory,
+   documentation       => 'Directory to store configuration files',
+   coerce              => Directory->coercion;
 
-has 'config_dir'    => is => 'lazy', isa => Directory, coerce => TRUE,
-   documentation    => 'Directory to store configuration files';
+option 'profile_dir'   => is => 'lazy', isa => Path, coerce => Path->coercion,
+   documentation       => 'Directory to store the session profiles',
+   default             => sub { [ $_[ 0 ]->config_dir, 'profiles' ] };
 
-has 'profile_dir'   => is => 'lazy', isa => Path, coerce => TRUE,
-   documentation    => 'Directory to store the session profiles',
-   default          => sub { [ $_[ 0 ]->config_dir, 'profiles' ] };
+option 'storage_class' => is => 'ro',   isa => NonEmptySimpleStr,
+   documentation       => 'File format used to store session data',
+   default             => sub { $_[ 0 ]->config->storage_class },
+   short               => 's';
 
-has 'storage_class' => is => 'ro',   isa => NonEmptySimpleStr,
-   documentation    => 'File format used to store session data',
-   traits           => [ 'Getopt' ], cmd_aliases => q(F), cmd_flag => 'format',
-   default          => sub { $_[ 0 ]->config->storage_class };
+has 'extensions'   => is => 'lazy', isa => HashRef, init_arg => undef;
 
-
-has '_extensions'   => is => 'lazy', isa => HashRef,
-   init_arg         => undef, reader => 'extensions';
-
-has '_profile_path' => is => 'lazy', isa => Path, coerce => TRUE,
-   init_arg         => undef, reader => 'profile_path';
-
-# Public methods
-sub query_dbus {
-   my $self = shift; my $cmd = [ @{ $self->dbus }, @_ ];
-
-   return trim $self->run_cmd( $cmd, { debug => $self->debug } )->stdout;
-}
-
-sub yakuake_sessions {
-   my $self = shift; return $self->query_dbus( q(/yakuake/sessions), @_ );
-}
-
-sub yakuake_tabs {
-   my $self = shift; return $self->query_dbus( q(/yakuake/tabs), @_ );
-}
+has 'profile_path' => is => 'lazy', isa => Path, coerce => Path->coercion,
+   init_arg        => undef;
 
 # Private methods
 sub _build_config_dir {
@@ -62,7 +45,7 @@ sub _build_config_dir {
    $dir->exists or $dir->mkpath; return $dir;
 }
 
-sub _build__extensions {
+sub _build_extensions {
    my $self        = shift;
    my $assoc_table = $self->file->dataclass_schema->extensions;
    my $reverse     = {};
@@ -74,10 +57,10 @@ sub _build__extensions {
    return $reverse;
 }
 
-sub _build__profile_path {
+sub _build_profile_path {
    my $self    = shift;
-   my $profile = shift @{ $self->extra_argv }
-      or throw 'Profile name not specified';
+   my $profile = $self->next_argv
+      or throw $self->loc( 'Profile name not specified' );
    my $path    = $self->io( $profile ); $path->exists and return $path;
    my $profdir = $self->profile_dir; $path = $profdir->catfile( $profile );
 
@@ -90,8 +73,6 @@ sub _build__profile_path {
 
    return $profdir->catfile( $profile.$extn );
 }
-
-__PACKAGE__->meta->make_immutable;
 
 1;
 
@@ -109,13 +90,13 @@ Yakuake::Sessions::Base - Attributes and methods for Yakuake session management
 
    package Yakuake::Sessions;
 
-   use Moose;
+   use Moo;
 
    extends 'Yakuake::Sessions::Base';
 
 =head1 Version
 
-This documents version v0.5.$Rev: 1 $ of L<Yakuake::Sessions::Base>
+This documents version v0.7.$Rev: 1 $ of L<Yakuake::Sessions::Base>
 
 =head1 Description
 
@@ -127,9 +108,9 @@ Defines the following attributes;
 
 =over 3
 
-=item C<dbus>
+=item C<config_class>
 
-Qt communication interface and service name
+The name of the configuration class
 
 =item C<config_dir>
 
@@ -149,23 +130,7 @@ value; C<JSON>
 
 =head1 Subroutines/Methods
 
-=head2 query_dbus
-
-   $self->query_dbus( 'dbus_command' );
-
-Performs C<dbus> commands
-
-=head2 yakuake_sessions
-
-   $self->yakuake_sessions( 'session_command' );
-
-Performs session commands, calls L</query_dbus>
-
-=head2 yakuake_tabs
-
-   $self->yakuake_tabs( 'tabs_command' );
-
-Performs tabs commands, calls L</query_dbus>
+None
 
 =head1 Diagnostics
 
