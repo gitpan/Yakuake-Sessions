@@ -2,7 +2,7 @@ Name
     Yakuake::Sessions - Session Manager for the Yakuake Terminal Emulator
 
 Version
-    This documents version v0.7.$Rev: 3 $ of Yakuake::Sessions
+    This documents version v0.7.$Rev: 4 $ of Yakuake::Sessions
 
 Synopsis
        # To reduce typing define some shell aliases

@@ -25,7 +25,7 @@ no_index:
 provides:
   Yakuake::Sessions:
     file: lib/Yakuake/Sessions.pm
-    version: v0.7.3
+    version: v0.7.4
   Yakuake::Sessions::Base:
     file: lib/Yakuake/Sessions/Base.pm
     version: v0.7.1
@@ -59,4 +59,4 @@ resources:
   homepage: http://www.roxsoft.co.uk
   license: http://dev.perl.org/licenses/
   repository: git://github.com/pjfl/Yakuake-Sessions.git
-version: v0.7.3
+version: v0.7.4
