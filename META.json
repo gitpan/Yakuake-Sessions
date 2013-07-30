@@ -53,7 +53,7 @@
    "provides" : {
       "Yakuake::Sessions" : {
          "file" : "lib/Yakuake/Sessions.pm",
-         "version" : "v0.7.4"
+         "version" : "v0.7.5"
       },
       "Yakuake::Sessions::Base" : {
          "file" : "lib/Yakuake/Sessions/Base.pm",
@@ -93,5 +93,5 @@
          "url" : "git://github.com/pjfl/Yakuake-Sessions.git"
       }
    },
-   "version" : "v0.7.4"
+   "version" : "v0.7.5"
 }
