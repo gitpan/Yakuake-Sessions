@@ -14,42 +14,39 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 a4df56a424c38a7d9ee0617d2bfee333f684b9d6 Build.PL
-SHA1 e592fcde2cff25a07512323559ce418d8a99d0a9 Changes
-SHA1 2b3ccb88f716f614f8af721a1c69dba0bcdbbb32 LICENSE
-SHA1 af5f4bbf74b79aa94246c20def9c1f84343f603e MANIFEST
-SHA1 5a68daf0231fd9ce7b0d332d4dac90df3e685a5a META.json
-SHA1 ef00a0594461a24fc71691658ca31993379220a4 META.yml
-SHA1 00e423df9dfdf59a1cb2d16b7ef907dcac8f3e37 README
-SHA1 6a691ba76566e378cee2b021a577dce8723304ca bin/yakuake_session
+SHA1 9a7c91a328b23b4bba06a97e1e31da1a7358ca06 Build.PL
+SHA1 378c61ad0aada3847e2864122d54dee24b951b0f Changes
+SHA1 8835c6f04f0b79a12fb91025ee72f89d949d1d54 LICENSE
+SHA1 c9ba1c834648f08df2cfd032a6402e835c71309d MANIFEST
+SHA1 83265b8b562f22f863cb5b22283007e7b008dbb9 META.json
+SHA1 1d0d06d87bdcf9742a6284c3979fec611bd91bce META.yml
+SHA1 af2bc39a790fce1716259b5c68adcff0552471fb README
+SHA1 6a42f6a9f815b81c7d5b1ea931f6015b19c4a1f9 bin/yakuake_session
 SHA1 a939384004056bd1bf9cfee1f37e2eab20350049 bin/yakuake_session_tt_cd
-SHA1 c9d93a6ddd04ad6ade84095f7c4941d01e191ece inc/Bob.pm
-SHA1 131242855e4780fa56d5b897e712feb742074a67 inc/CPANTesting.pm
-SHA1 3e461b4687dcea7680dc96761ecd703556759063 inc/SubClass.pm
-SHA1 73fa9e275a1ff7cc474102abc8ca7fb603c63c4e lib/Yakuake/Sessions.pm
-SHA1 c84348d687959dc783dee25e57972ab8a1cf8e8a lib/Yakuake/Sessions/Base.pm
-SHA1 e5a0e8d17db323e1ef2f67dbc8bbf3aa23ecabe3 lib/Yakuake/Sessions/Config.pm
-SHA1 63246f3a5ca67cc30a8b1036dfc7fea5d36289a5 lib/Yakuake/Sessions/TraitFor/DBus.pm
-SHA1 242bd94d7ee510c469dd13498c7778db1d8cecc5 lib/Yakuake/Sessions/TraitFor/FileData.pm
-SHA1 8f4802ccab4e3e3a3019dc9065e45d4c0006ed58 lib/Yakuake/Sessions/TraitFor/Management.pm
-SHA1 4933c4fe1a49dae5d385c46681c72483cfa3fe1c lib/Yakuake/Sessions/TraitFor/TabTitles.pm
-SHA1 d197e3f0b7305c846e1f998ded6b4f437e64ce97 t/01always_pass.t
-SHA1 34b47d2a767a93a38980e2e6d4ece71e0ead2097 t/02pod.t
-SHA1 e626b25ead6e8ec02bbe603ff477388816a5a523 t/03podcoverage.t
-SHA1 122060258c0fe6130840de7f9e0d52015f720d45 t/04critic.t
-SHA1 6b10684af0f8344504243433a7ff1d0b49d28ed0 t/05kwalitee.t
-SHA1 95d1d35d6d496ebada053bdf0a9a5e7a39547630 t/06yaml.t
-SHA1 23ec18bc9f51d8f53e86e995903634bce698ece5 t/07podspelling.t
-SHA1 b13f5aff9849a47d9cd499d3b7fd91f23bd1c9a7 t/10test_script.t
+SHA1 86c83ea3d4f9edb94e0042e901a6eceb1cc0be83 lib/Yakuake/Sessions.pm
+SHA1 c239e4979a206d09d4ab75f5612914fb66adb778 lib/Yakuake/Sessions/Base.pm
+SHA1 ef67766779e5f768e98ef17cae7602fe4c551e8b lib/Yakuake/Sessions/Config.pm
+SHA1 1f962070f3ebbe33a6e9e6f269fe8e8ab27838c2 lib/Yakuake/Sessions/TraitFor/DBus.pm
+SHA1 07055b1cbc62d3baa9d18c1769faecdb840ad311 lib/Yakuake/Sessions/TraitFor/FileData.pm
+SHA1 33984400db333fe333577cf256c42a1867878e70 lib/Yakuake/Sessions/TraitFor/Management.pm
+SHA1 04d4c924ee76ae125a503be0a98cedb759117a48 lib/Yakuake/Sessions/TraitFor/TabTitles.pm
+SHA1 14a470457e68fca75b219146835e3a7521a5dc74 t/01always_pass.t
+SHA1 f501acfbb8e23775f848902993dd40a42df9fd95 t/02pod.t
+SHA1 46439b2d0f3d88baea736d97dd8424d199c08b34 t/03podcoverage.t
+SHA1 7285eaa72e398f4b4a4deda8883c2408f2615c7f t/04critic.t
+SHA1 5b6c59d608132dcf622412fa05311106ae17b2ab t/05kwalitee.t
+SHA1 ad217fb61029575d291d83e30bd512846f71026f t/06yaml.t
+SHA1 323d0ad522c4db0e2d0704c479f9f0413e4f713e t/07podspelling.t
+SHA1 0780972e8e0a846267637c7e4c4094a6600d537c t/10test_script.t
 SHA1 00aa2e48a788f7ec7de8365693f0ba278f86c98c t/critic.rc
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iQEcBAEBAgAGBQJSAoi/AAoJEK492j4Im1Bp6o4H/0Nw5hTXxO4F+cf0KBlufD2a
-NllYSTGqgPTqF0S3QSE4qn86/4jlbkr3mNsU9luE9mes1Dij9zl9Dms6g0h+Y/tw
-bY2Eb2xo+R+qBlDq1DToZvzMxkHsKFC6t7oqSwm7d6mBTsdNa8LIHKUclM2Mdyfa
-dSO5qdeaXhjnRoqO8fH0Kg7zP8kqvzW+fA9JnUO1oe/MGd/MXpF9SFX2FFjHZeUj
-gUPseOZhn6ACOXUfHYaiT43bYqfryfkkQRJOX6dKC/QJJ/D5FWzcELcNa3rcZUeh
-m+Mf8XLtrcMbi/iMGo9q6oXd1wz4ZL6tm03c3cdTqgWuT82nmmt6zPNwRdGNFMs=
-=7fej
+iQEcBAEBAgAGBQJSDXwyAAoJEK492j4Im1BpPwYIAIVTjrhNEmuqjsqlShe8Xyr+
+g2Qus99PTj+9pUtMpLZSzBXlFV0+193fEODB7Wwy3O9nG3l/RdPZst3WpJdCCigw
+WHfjU/HFdkTtmnOtNJLarULMOST/z9xuYHFroY4IZuiMTlGutzRizjq4aHF5ZnZV
+AfPbXAiPPWjF6YcX3eO5BYNSJa31ckOJc6Ppu1wlyeX7V2yiY2G03O545eg5DFy5
+aZKl3usu8ene+FzWFkvTIk7mNAp36xPtdlszenDm5FsCrjJvHEsLEGxoK1rhEOWS
+ATW2nEIhG9ekU1BfANKdvh69q8yukWneknlH+hjPCeGrxuJIgjBlZBeoODfiMFE=
+=2AYS
 -----END PGP SIGNATURE-----

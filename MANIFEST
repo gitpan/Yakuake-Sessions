@@ -1,10 +1,13 @@
-bin/yakuake_session
-bin/yakuake_session_tt_cd
 Build.PL
 Changes
-inc/Bob.pm
-inc/CPANTesting.pm
-inc/SubClass.pm
+LICENSE
+MANIFEST
+META.json
+META.yml
+README
+SIGNATURE
+bin/yakuake_session
+bin/yakuake_session_tt_cd
 lib/Yakuake/Sessions.pm
 lib/Yakuake/Sessions/Base.pm
 lib/Yakuake/Sessions/Config.pm
@@ -12,11 +15,6 @@ lib/Yakuake/Sessions/TraitFor/DBus.pm
 lib/Yakuake/Sessions/TraitFor/FileData.pm
 lib/Yakuake/Sessions/TraitFor/Management.pm
 lib/Yakuake/Sessions/TraitFor/TabTitles.pm
-LICENSE
-MANIFEST			This list of files
-META.json
-META.yml
-README
 t/01always_pass.t
 t/02pod.t
 t/03podcoverage.t
@@ -26,4 +24,3 @@ t/06yaml.t
 t/07podspelling.t
 t/10test_script.t
 t/critic.rc
-SIGNATURE    Added here by Module::Build
