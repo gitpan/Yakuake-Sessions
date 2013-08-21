@@ -1,5 +1,8 @@
 Revision history for Yakuake::Sessions
 
+0.10.1    2013-08-21 14:23:04
+          - Fixed metadata after switch to DZ
+
 0.9.1     2013-08-15 23:33:26
           - Switched to Dist::Zilla
 
@@ -56,7 +59,6 @@ Revision history for Yakuake::Sessions
           - Updated inc::Bob to v1.12
           - Updated .gitpre-commit to use global revision number
 
-0.1       2012-11-04 03:43:11
+0.1.1     2012-11-04 03:43:11
           - Initial Release
-
 
