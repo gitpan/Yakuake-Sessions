@@ -14,39 +14,39 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 9a7c91a328b23b4bba06a97e1e31da1a7358ca06 Build.PL
-SHA1 d27b60ee4b9511bd3811885649dfdca5df8cca68 Changes
+SHA1 7b7541c821f9726bee24375b7eae3c842df43942 Build.PL
+SHA1 519ebc1b5dbdae07e8d96e83ca6ffabcb28e69d7 Changes
 SHA1 8835c6f04f0b79a12fb91025ee72f89d949d1d54 LICENSE
 SHA1 c9ba1c834648f08df2cfd032a6402e835c71309d MANIFEST
-SHA1 6d2fcc01b9ddf9b60f257285c10884484b7074c0 META.json
-SHA1 d2378ac31c60490eb534bc8c64b821ac6cc0827a META.yml
-SHA1 376da2d7b7bed7faf66d98c2c05cb2b03d0e0bc2 README
-SHA1 0e94b9fb87bfd7ffdddf8a79b0d10bc3f78ff15a bin/yakuake_session
-SHA1 a939384004056bd1bf9cfee1f37e2eab20350049 bin/yakuake_session_tt_cd
-SHA1 e32e138bcd7cefcbcc947c32ed6f016dbafd1a56 lib/Yakuake/Sessions.pm
-SHA1 2b6c61505111708120b55b6c66824152e2e5e5ec lib/Yakuake/Sessions/Base.pm
-SHA1 e81acd1e1449b325bd65363efa1abca777fdb57f lib/Yakuake/Sessions/Config.pm
-SHA1 b87d366ca0df095a7660fbd9ac9c3062a57c925d lib/Yakuake/Sessions/TraitFor/DBus.pm
-SHA1 76818b1cdb6b2e7d4da9b904c840866dc95ec58a lib/Yakuake/Sessions/TraitFor/FileData.pm
-SHA1 f780d0efba6b8e0bbf1f98a371d717f31fb9dcae lib/Yakuake/Sessions/TraitFor/Management.pm
-SHA1 dc167021dc01634db6ae409e4702e0bb9c7732a2 lib/Yakuake/Sessions/TraitFor/TabTitles.pm
+SHA1 9dbe20764ee185c4856346b47ca0d07e49a26ec0 META.json
+SHA1 778f3a155e12bac3ccec154517390276a1cd3f1d META.yml
+SHA1 1a58822a0126d41574252b1b224818045a1658e6 README
+SHA1 253a7d59e7c3caeb369df3fdbb2f1ba68108c988 bin/yakuake_session
+SHA1 242f2b45bb1fd0aabd9fc41a6950452674130292 bin/yakuake_session_tt_cd
+SHA1 4054cba570f04b53b8d511ba9c94f01895d2cdfa lib/Yakuake/Sessions.pm
+SHA1 265530dfade36577729893ad1928d4f7f1c55a91 lib/Yakuake/Sessions/Base.pm
+SHA1 e3369fd203a159a2bf2358580f905be6d7723071 lib/Yakuake/Sessions/Config.pm
+SHA1 c8c48e38f47cbf197f4a036655ff700cccc99d18 lib/Yakuake/Sessions/TraitFor/DBus.pm
+SHA1 bb801dcc2c40e5bb3fe99fb80874c52312f903ce lib/Yakuake/Sessions/TraitFor/FileData.pm
+SHA1 b7e012d6458c8762e9df7900fa05f37435fc3052 lib/Yakuake/Sessions/TraitFor/Management.pm
+SHA1 dba8a648a0fc7951ea3fe23c5bb2371e498b2917 lib/Yakuake/Sessions/TraitFor/TabTitles.pm
 SHA1 14a470457e68fca75b219146835e3a7521a5dc74 t/01always_pass.t
-SHA1 d1b501b551a337dad65399c1c7108f11ccfefab9 t/02pod.t
-SHA1 a8e4789ef9e674e6150e13e9b67617d8297100e0 t/03podcoverage.t
-SHA1 0488d935c2b9493aaf0204884fffcd016fddc8d8 t/04critic.t
-SHA1 0f80b346ab9db38692bcada8e1610c0ab9a5784b t/05kwalitee.t
-SHA1 1f495d5119dfe5aad19c5baadf58d5a98123e344 t/06yaml.t
-SHA1 d493702e58e91744c33601131a2e9a1a5b52dc7f t/07podspelling.t
-SHA1 61234cdcc62bf99a57efca6ed8e02914eca79f77 t/10test_script.t
+SHA1 5942161f46d396412c9b5e985d17450c0aebfe1f t/02pod.t
+SHA1 810e70f83c4dad2d6c74dd4880f00bfcc91d48dd t/03podcoverage.t
+SHA1 41372b7ca1775a92cc069a0df80effb72d815aca t/04critic.t
+SHA1 ee3b95756125daf635ff25e19f443792073c6fac t/05kwalitee.t
+SHA1 9eef27fa52c7f01d3046342ea2be649fbc024713 t/06yaml.t
+SHA1 a335033c5a0afb99e08cfc1d74a953e755f94468 t/07podspelling.t
+SHA1 4c4fbeba56cdef28890e3105541781e797ec8031 t/10test_script.t
 SHA1 00aa2e48a788f7ec7de8365693f0ba278f86c98c t/critic.rc
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iQEcBAEBAgAGBQJSFL9aAAoJEK492j4Im1BpKzgH/3khxYyr1TvcLoYeOB3se8hd
-MjFqnxU1DFRjyu3L1wbIT514B2XFZWnKEusOBc4B0B+kXw4dcjSoJMkQ0pPi9FRh
-taj9RxSLd/Lmm0yjxAb3lUoBRqPNgAlpkPQ2QE8jjMxYc5GlaPw146Hm42ETUveE
-mS+dphPTcOsVckc4pJ8L7IBpjS3/JLLTtagtCcVnEA7RD7lPEFGmrOol2iJ7hoBh
-mLpvzZEIs5h5iS9rdGvw4QIdLXjNCS+a5YM2MiXgj7o9vYF/asBHpzApeUJdfdzj
-UdLM5QFz4dPSzigESkWQIVazEb9z9J5j89XW1ZK0Nk10p1TotW7ZJvnqFlUwME0=
-=RMiU
+iQEcBAEBAgAGBQJSkKngAAoJEK492j4Im1Bp3KcIAKy500UkW7oo9mX2BtSWMfFq
+pRsn1qA3vxRL3ALzjYhQ9FWwVN8TqHvkrMKH1xKXNbx6fP43qsclolBFq0pnc971
+ECF9KX55JUHaNDt4wNMFBZ/5+8YT/uijI6/74JZcxuTcKEhwCfmrqh2XFv4yOad2
+pi+L0iVSFPOen4EDFdan9iPVmZTh4knt18uL1jUWZwPj1IryT3FxDURiEFWr35eU
+YfQRTT8wZUizPhDJDVNOkxkltkos5p1mO08iUqVRpTG2Du97GUk9bGv+5i9wME0Q
+oa5je76F9TipnHqQ71pgBJ79LJZ2AaATZCEPTXlTJSfDv+a4f7ESE2ghkJcGohc=
+=dpCH
 -----END PGP SIGNATURE-----
