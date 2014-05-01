@@ -1,10 +1,8 @@
-# @(#)Ident: Sessions.pm 2013-11-22 18:58 pjf ;
-
 package Yakuake::Sessions;
 
 use 5.010001;
 use namespace::sweep;
-use version; our $VERSION = qv( sprintf '0.11.%d', q$Rev: 1 $ =~ /\d+/gmx );
+use version; our $VERSION = qv( sprintf '0.13.%d', q$Rev: 1 $ =~ /\d+/gmx );
 
 use Moo;
 use Class::Usul::Constants;
@@ -34,7 +32,7 @@ Yakuake::Sessions - Session Manager for the Yakuake Terminal Emulator
 
 =head1 Version
 
-This documents version v0.11.$Rev: 1 $ of L<Yakuake::Sessions>
+This documents version v0.13.$Rev: 1 $ of L<Yakuake::Sessions>
 
 =head1 Synopsis
 
@@ -160,6 +158,12 @@ List the session profiles stored in the F<profile_dir>
 Load the specified profile, recreating the tabs with their title text,
 current working directories and executing commands
 
+=head2 select
+
+   yakuakge_session select
+
+Select the profile to load from the displayed list
+
 =head2 set_tab_title
 
    yakuake_session set_tab_title <title_text>
@@ -225,7 +229,7 @@ Peter Flanigan, C<< <pjfl@cpan.org> >>
 
 =head1 License and Copyright
 
-Copyright (c) 2013 Peter Flanigan. All rights reserved
+Copyright (c) 2014 Peter Flanigan. All rights reserved
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself. See L<perlartistic>
