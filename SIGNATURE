@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.66.
+signed via the Module::Signature module, version 0.73.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,38 +14,38 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 1bc98cbe255b1499087fde3127f4a619c445447c Build.PL
-SHA1 97e5dadc768199a2bfee0556275f16026148aaa8 Changes
-SHA1 f793e6bc540f905d5902532797429443b224c888 LICENSE
+SHA1 9cd24a7ee1763be726220fc77761b2afd9493f33 Build.PL
+SHA1 d6e83f58fa2a12130778379e7300dfdbace583c8 Changes
+SHA1 b8415dc6fd6293b168bcc15a552f4383175e2f2f LICENSE
 SHA1 11520f6a20e9a07c2b279d7ee979582d89154fda MANIFEST
-SHA1 df1816da3549cf8a48e0d4f088a84418bcacc30c META.json
-SHA1 3ee9b02dd37597d9649066005b112846e201c25c META.yml
-SHA1 e727459eccb51797312c29d5a509aa15d1526338 README
-SHA1 11b9d7ba2706d3b3d9f294637d78be80bdbb1f05 bin/yakuake_session
+SHA1 d4e2259af0303fb9efcda6e4c25b2aab51b9e595 META.json
+SHA1 efd28bcdb88827989f965d262b7e7e008c15b69f META.yml
+SHA1 ea3c39d4d67d0e14927d85b0111a1e3fd8e8b3e2 README
+SHA1 b24486023636f373b99d638774c83e7fe84280a3 bin/yakuake_session
 SHA1 4c4e371086f8e406a6f3b33467825155925ed8f2 bin/yakuake_session_tt_cd
-SHA1 fdf3c1b41499fcb0f368436c9bff134061ea22d0 lib/Yakuake/Sessions.pm
-SHA1 0dc86b75444b46e8e9db9aba7d5722ada416a3a1 lib/Yakuake/Sessions/Base.pm
-SHA1 c4328422db5be592ff457457a67fff6302b59f12 lib/Yakuake/Sessions/Config.pm
-SHA1 b067fb4c5e0cb45d831be871768c179754a234cc lib/Yakuake/Sessions/TraitFor/DBus.pm
-SHA1 b2c2f207989e5df5e8c728f11fe91dfbea03870f lib/Yakuake/Sessions/TraitFor/FileData.pm
-SHA1 aadf757156fee7876dd5e9a2e60f9fb657efb76c lib/Yakuake/Sessions/TraitFor/Management.pm
-SHA1 c1e97479375a302749a419bc303c2d230e6591a1 lib/Yakuake/Sessions/TraitFor/TabTitles.pm
+SHA1 6c9becf7f6ccb0da0dd7cc1eddd7209a9cd18702 lib/Yakuake/Sessions.pm
+SHA1 40a7d6e3c7c893a6dc3b05b324af62492a3b47fd lib/Yakuake/Sessions/Base.pm
+SHA1 e16b88b4b6d02965fa38d92f65fa3f6555474f81 lib/Yakuake/Sessions/Config.pm
+SHA1 80546dd14c1c2b1f9ae6f46f4b9ec8369f1c3368 lib/Yakuake/Sessions/TraitFor/DBus.pm
+SHA1 c3e35e8e7a43eebd236a90f4490196c19448e505 lib/Yakuake/Sessions/TraitFor/FileData.pm
+SHA1 b455e73b89bbff8cebd8dc1150e0a7731528a6f5 lib/Yakuake/Sessions/TraitFor/Management.pm
+SHA1 e5d579a749a995ea116d7555ecceefec02eb20ae lib/Yakuake/Sessions/TraitFor/TabTitles.pm
 SHA1 433d5591629e03faaef4738c70ea173329e0f1eb t/01always_pass.t
 SHA1 427b1a5820b3d6bc52044b99c999e458eba7d6dc t/02pod.t
 SHA1 905a84ed4a01bba172b682620964560f04ff93d2 t/03podcoverage.t
 SHA1 c1c29d14c961c30f0ea1ff84dd3b6acb7f4d3e81 t/05kwalitee.t
 SHA1 8b1ef2c2000dda84911be6a6bf76d4de88a4d4dc t/06yaml.t
 SHA1 1a14defd07f0f1556631ed6fe7a68bedc09a1460 t/07podspelling.t
-SHA1 3e3e044e72681c0a2737cbc9c417566b973c7952 t/10test_script.t
+SHA1 8c8d03f797c2ded82096d805b42c176ae72bdcf2 t/10test_script.t
 SHA1 00aa2e48a788f7ec7de8365693f0ba278f86c98c t/critic.rc
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iQEcBAEBAgAGBQJTYls0AAoJEK492j4Im1BphQ4IAM4Too//rMzjHi2MGc+sHX0V
-QK5RETuwUUXfCx8uCRqFzycaOBxG3RGQ2fjFrOZWRtsv8eqgU9PVgROIDU1qk6gn
-l+jQOH6Xds9xYsmkvM1XO/9ZcHawdbJHvpZolQS5OTprrZfCs5jjgaQlgeQck0pO
-ttOQXH/0UjGqd/Mq6e0ry8oqZqu3dVPF/lwgculImTleV4+NNxvvEkX683QWnrcH
-QXuepd2VR69OSaWnMmF2YH4s5ys2n5y5bnb/9IM1454VOOuRh1dvEvrG/m2oQzdW
-Pb+4wEXOd6PblFOifiAB4Ry0NCgRYID7jSKTS7vYDVRmJ0zhsaOp6BQg0YHoku8=
-=uMnc
+iQEcBAEBAgAGBQJT8NuaAAoJEK492j4Im1BpNusH/1nnLVPnawkBfYpYBOVzUcaQ
+XpUSub8S8HNit1NL9+Qh8TmxC2uCkDp+WFbYg89H+Ud0Yz8dM7agOECNKNl6NFkY
+FwZVMMod68LUpYYJnTtZ8mxg+fuQItVBPTATn1JOICp8s1RkUobQRfbEGsOr+e/4
+XauDC42/q3svyxbHV3lzFXDoEDN+SNDpfJw9ai9VlwdJEhrhwS7nSF/Rsn2rFgWb
+hO0RYQ6BAAVt5ChVSfjVo4H4E8VOqkBKPLjKmEsB23ad4fBPgUcp9AcvCrABt8Mh
+SIMIdajapnBJ07iXqhfjPbQ453gJYFJyK65n04S9+IEB849YNzNIqy0WLubp6w0=
+=5p1s
 -----END PGP SIGNATURE-----

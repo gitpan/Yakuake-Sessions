@@ -25,7 +25,7 @@ my $prereqs  = {
     'Moo' => '1.004002',
     'Net::DBus' => 'v1.0.0',
     'Unexpected' => 'v0.22.1',
-    'namespace::sweep' => '0.006',
+    'namespace::autoclean' => '0.19',
     'perl' => '5.010001'
   },
 };
