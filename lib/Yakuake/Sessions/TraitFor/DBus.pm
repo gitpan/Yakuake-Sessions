@@ -2,12 +2,12 @@ package Yakuake::Sessions::TraitFor::DBus;
 
 use namespace::autoclean;
 
-use Class::Usul::Constants qw( EXCEPTION_CLASS NUL SPC );
+use Class::Usul::Constants qw( EXCEPTION_CLASS FALSE NUL SPC TRUE );
 use Class::Usul::Functions qw( throw trim zip );
 use Class::Usul::Time      qw( nap );
 use Class::Usul::Types     qw( LoadableClass Object );
 use English                qw( -no_match_vars );
-use Net::DBus::Annotation  qw( :call );
+use Try::Tiny;
 use Moo::Role;
 
 requires qw( debug run_cmd );
@@ -39,7 +39,7 @@ has '_dbus'      => is => 'lazy',
 sub apply_sessions {
    my ($self, $session_tabs) = @_; my $active; my $tab_no = 0;
 
-   $self->_close_session( $_ ) for ($self->_get_ksession_ids);
+   $self->_close_sessions;
 
    for my $tab (@{ $session_tabs }) {
       my $sess_id  = $self->_maybe_add_session( $tab_no );
@@ -47,18 +47,19 @@ sub apply_sessions {
       my $tty_num  = $self->_get_tty_num( $ksess_id );
       my $title    = $tty_num.SPC.$tab->{title};
 
+      # TODO: Log shows applying the right title even when result wrong
+      # Problem must come after this not before. Set tab title is on the
+      # tabs object, raise sessions is on the session object
       $self->log->debug( "Applying ${tab_no} ${sess_id} ${ksess_id} ${title}" );
 
       $self->set_tab_title_for_session( $title, $sess_id );
-      $tab->{cwd   } and $self->sessions->runCommand
-         ( dbus_call_sync, 'cd '.$tab->{cwd} );
-      $tab->{cmd   } and $self->sessions->runCommand
-         ( dbus_call_sync, $tab->{cmd} );
+      $tab->{cwd   } and $self->sessions->runCommand( 'cd '.$tab->{cwd} );
+      $tab->{cmd   } and $self->sessions->runCommand(       $tab->{cmd} );
       $tab->{active} and $active = $sess_id;
       $tab_no++;
    }
 
-   defined $active and $self->sessions->raiseSession( dbus_call_sync, $active );
+   defined $active and $self->sessions->raiseSession( $active );
    return;
 }
 
@@ -91,23 +92,41 @@ sub set_tab_title_for_session {
 
    $sess_id //= $self->_get_active_session_id;
 
-   return $self->tabs->setTabTitle( dbus_call_sync, $sess_id, $title );
+   return $self->tabs->setTabTitle( $sess_id, $title );
 }
 
 # Private methods
-sub _close_session {
-   my ($self, $ksess_id) = @_;
+sub _close_sessions {
+   my $self        = shift;
+   my $active_sess = $self->_get_active_session_id;
+   my $borked      = FALSE;
 
-   my $fgpid = $self->_get_session_fg_process_id( $ksess_id );
-   my $pid   = $self->_get_session_process_id( $ksess_id );
+   for my $sess_id  ($self->_get_session_ids) {
+      my $ksess_id = $self->_get_session_map->{ $sess_id };
+      my $fgpid    = $self->_get_session_fg_process_id( $ksess_id );
+      my $pid      = $self->_get_session_process_id( $ksess_id );
 
-   $pid != $fgpid and kill 'TERM', $fgpid;
+      $pid != $fgpid and kill 'TERM', $fgpid;
 
-   return $self->_get_session_object( $ksess_id )->close;
+      # Konsole removed the close method from the API after 4.4 before 4.8.4
+      # Utterly useless bastards
+      unless ($borked) {
+         try   { $self->_get_session_object( $ksess_id )->close }
+         catch { $borked = TRUE };
+      }
+
+      if ($borked and $sess_id != $active_sess) {
+         $self->sessions->raiseSession( $sess_id );
+         $self->sessions->runCommand( 'exit' );
+         sleep 1;
+      }
+   }
+
+   return;
 }
 
 sub _get_active_session_id {
-   return int $_[ 0 ]->sessions->activeSessionId( dbus_call_sync );
+   return int $_[ 0 ]->sessions->activeSessionId;
 }
 
 sub _get_current_directory {
@@ -137,7 +156,7 @@ sub _get_ksession_ids {
 }
 
 sub _get_session_at_tab {
-   return int $_[ 0 ]->tabs->sessionAtTab( dbus_call_sync, $_[ 1 ] );
+   return int $_[ 0 ]->tabs->sessionAtTab( $_[ 1 ] );
 }
 
 sub _get_session_fg_process_id {
@@ -145,11 +164,9 @@ sub _get_session_fg_process_id {
 }
 
 sub _get_session_ids {
-   my $sessions = $_[ 0 ]->sessions;
-
    return ( sort   { $a <=> $b }
             map    { int $_ }
-            split m{ , }msx, $sessions->sessionIdList( dbus_call_sync ) );
+            split m{ , }msx, $_[ 0 ]->sessions->sessionIdList );
 }
 
 sub _get_session_map {
@@ -165,8 +182,7 @@ sub _get_session_process_id {
 }
 
 sub _get_tab_title {
-  (my $title = $_[ 0 ]->tabs->tabTitle( dbus_call_sync, $_[ 1 ] ) )
-     =~ s{ \A \d+ \s+ }{}mx;
+  (my $title = $_[ 0 ]->tabs->tabTitle( $_[ 1 ] ) ) =~ s{ \A \d+ \s+ }{}mx;
 
    return $title;
 }
@@ -185,9 +201,9 @@ sub _maybe_add_session {
 
    $tab_no > 0 or return $sess_id;
 
-   my $old_id = $sess_id; $self->sessions->addSession( dbus_call_sync );
+   my $old_id = $sess_id; $self->sessions->addSession;
 
-   while (not length $sess_id or $old_id == $sess_id) {
+   while (not length $sess_id or $sess_id <= $old_id) {
       nap $self->config->nap_time; $sess_id = $self->_get_active_session_id;
    }
 

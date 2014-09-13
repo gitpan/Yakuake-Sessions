@@ -24,6 +24,7 @@ my $prereqs  = {
     'File::DataClass' => 'v0.35.0',
     'Moo' => '1.004002',
     'Net::DBus' => 'v1.0.0',
+    'Try::Tiny' => '0.22',
     'Unexpected' => 'v0.22.1',
     'namespace::autoclean' => '0.19',
     'perl' => '5.010001'
